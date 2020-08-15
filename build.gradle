@@ -1,0 +1,38 @@
+plugins {
+    id 'org.springframework.boot' version '2.3.3.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+    maven { url "https://oss.sonatype.org/content/repositories/vaadin-snapshots/" }
+    maven { url "http://maven.vaadin.com/vaadin-addons" }
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-data-jpa')
+    compile('org.springframework.boot:spring-boot-starter-mail')
+    compile('com.vaadin:vaadin-spring-boot-starter:10.0.4')
+    compile('com.sendgrid:sendgrid-java:3.2.1')
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.vaadin.addons:numberfield:0.5.1')
+    compile('org.vaadin.blackbluegl:calendar-component:2.0-BETA4')
+    compile('org.vaadin.onur:calendar-component:1.0.0')
+    compile 'com.sendgrid:sendgrid-java:3.1.0'
+    implementation 'org.springframework.boot:spring-boot-starter-groovy-templates'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
+
+test {
+    useJUnitPlatform()
+}

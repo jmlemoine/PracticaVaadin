@@ -1,0 +1,62 @@
+package com.example.demo.Model;
+
+import org.vaadin.calendar.CalendarItemTheme;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import java.io.Serializable;
+import java.util.Date;
+
+@Entity
+public class Evento implements Serializable {
+
+    @Id
+    private long id;
+
+    private Date fecha;
+    private String titulo;
+    private CalendarItemTheme color;
+
+    public Evento() {
+
+    }
+
+    public Evento(long id, Date fecha, String titulo, CalendarItemTheme color) {
+        this.id = id;
+        this.fecha = fecha;
+        this.titulo = titulo;
+        this.color = color;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public CalendarItemTheme getColor() {
+        return color;
+    }
+
+    public void setColor(CalendarItemTheme color) {
+        this.color = color;
+    }
+}
