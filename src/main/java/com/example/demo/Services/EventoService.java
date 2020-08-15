@@ -17,6 +17,12 @@ public class EventoService {
     @Autowired
     private EventoRepository eventoRepository;
 
+    public List<Evento> listarEventos() {
+
+        return eventoRepository.findAll();
+
+    }
+
     public List<Evento> encontrarEventoPorFecha(Date fecha) {
 
         return eventoRepository.findAllByFecha(fecha);
